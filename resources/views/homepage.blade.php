@@ -18,9 +18,36 @@
 <body>
 
     <main class="bg-light">
-        <h1>
-            Main
-        </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>
+                        Movies
+                    </h1>
+                </div>
+
+                @foreach ($movies as $movie)
+                    <div class="col-3">
+                        <h3>
+                            {{ $movie->title }}
+                        </h3>
+                        <h5>
+                            {{ $movie->original_title }}
+                        </h5>
+                        <p>
+                            {{ $movie->nationality }}
+                        </p>
+                        <p>
+                            {{ $movie->date }}
+                        </p>
+                        <p>
+                            {{ $movie->vote }}
+                        </p>
+                    </div>
+                @endforeach
+                
+            </div>
+        </div>
     </main>
 
 </body>
