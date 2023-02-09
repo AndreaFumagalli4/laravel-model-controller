@@ -1,1 +1,19 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+header{
+    text-align: center;
+
+    h1{
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+main{
+    padding: 2rem;
+
+    div.card{
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+}

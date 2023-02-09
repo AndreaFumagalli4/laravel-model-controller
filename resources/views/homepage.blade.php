@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', 'My Movies')
 
-    <title>Laravel</title>
+@section('main-content')
+    <div class="container">
+        <div class="row">
 
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-
-    <main class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>
-                        Movies
-                    </h1>
-                </div>
-
-                @foreach ($movies as $movie)
-                    <div class="col-3">
+            @foreach ($movies as $movie)
+                <div class="col-3">
+                    <div class="card">
                         <h3>
                             {{ $movie->title }}
                         </h3>
@@ -35,21 +16,18 @@
                             {{ $movie->original_title }}
                         </h5>
                         <p>
-                            {{ $movie->nationality }}
+                            Nationality: {{ $movie->nationality }}
                         </p>
                         <p>
-                            {{ $movie->date }}
+                            Date of release: {{ $movie->date }}
                         </p>
                         <p>
-                            {{ $movie->vote }}
+                            Avarage vote: {{ $movie->vote }}
                         </p>
                     </div>
-                @endforeach
-                
-            </div>
+                </div>
+            @endforeach
+            
         </div>
-    </main>
-
-</body>
-
-</html>
+    </div>
+@endsection
